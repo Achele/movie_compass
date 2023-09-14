@@ -4,6 +4,7 @@ import { IMDb, Tomatoe } from "./Icon";
 
 const MovieCard = (movies) => {
   console.log(`results: ============= ${movies}`);
+
   return (
     <div>
       <Link to={`/movies/${movies.id}`}>
@@ -14,13 +15,13 @@ const MovieCard = (movies) => {
           />
         </div>
         <p>{movies.release_date}</p>
-        <h2>{movies.title}</h2>
-        <span>
-          <span>
-            <IMDb /> {movies.vote_average}
+        <h2 className="font-bold">{movies.title}</h2>
+        <span className="flex justify-between">
+          <span className="flex items-center gap-1 text-xs">
+            <IMDb /> {movies.vote_average?.toFixed(1) * 10}.0 / 100
           </span>
-          <span>
-            <Tomatoe /> {movies.popularity}
+          <span className="flex items-center gap-1 text-xs">
+            <Tomatoe /> {movies.popularity?.toFixed(0)}%
           </span>
         </span>
       </Link>
