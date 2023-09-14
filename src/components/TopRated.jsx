@@ -1,12 +1,13 @@
 // import { useState } from "react";
 import useFetch from "../hooks/useFetch";
-import { IMDb, Loader, Tomatoe } from "./Icon";
-import styles from "../styles/Hero.module.css";
+import { Loader } from "./Icon";
+// import styles from "../styles/Hero.module.css";
+import MovieCard from "./MovieCard";
 
 const TopRated = () => {
   // const [toprated, setTopRated] = useState(null)
   const API_KEY = "805ad364617cc903792ab354ed226736";
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&page=1`;
+  const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
   const { loading, data, error } = useFetch(url);
   const results = data?.results?.slice(0, 10);
   console.log(results);
