@@ -13,6 +13,7 @@ import twitterIcon from "../assets/fa-brands_twitter.png";
 import instagramIcon from "../assets/fa-brands_instagram.png";
 import facebookIcon from "../assets/fa-brands_facebook-square.png";
 import youtubeIcon from "../assets/fa-brands_youtube.png";
+import logo from "../assets/Logo.png";
 
 const TvIcon = (props) => <img src={tvIcon} alt="Tv Icon" {...props} />;
 
@@ -49,6 +50,7 @@ const YoutubeIcon = (props) => (
   <img src={youtubeIcon} alt="Tv Icon" {...props} />
 );
 
+const Logo = (props) => <img src={logo} alt="Tv Icon" {...props} />;
 export {
   TvIcon,
   MenuBar,
@@ -65,4 +67,5 @@ export {
   FacebookIcon,
   InstagramIcon,
   YoutubeIcon,
+  Logo,
 };
