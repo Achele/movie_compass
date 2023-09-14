@@ -19,7 +19,7 @@ const TopRated = () => {
       {error && (
         <div className="error">{`There is a problem fetching the movie data - ${error}`}</div>
       )}
-      <section className="grid grid-cols-4 gap-4">
+      <section className="grid grid-cols-4 gap-12">
         {results &&
           results.map((movies) => {
             return <MovieCard key={movies.id} {...movies} />;
