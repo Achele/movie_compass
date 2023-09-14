@@ -1,0 +1,7 @@
+.heroBackground {
+  background-image: url("../assets/Poster.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
