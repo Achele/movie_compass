@@ -1,5 +1,6 @@
 import { MenuBar, SearchIcon, TvIcon } from "./Icon";
 import styles from "../styles/Hero.module.css";
+import SearchBar from "./Search";
 // import styles from "../styles/"
 
 const Header = () => {
@@ -10,13 +11,8 @@ const Header = () => {
           <TvIcon />
           <h1 className="text-white px-4">MovieBox</h1>
         </span>
-        <div className="border-2 flex items-center px-4 rounded  w-1/3">
-          <input
-            type="text"
-            placeholder="what do you want to watch?"
-            className="w-full bg-none"
-          />
-          <SearchIcon className={"text-gray-600"} />
+        <div className="flex items-center overflow-hidden relative">
+          <SearchBar />
         </div>
         <span className="flex items-center">
           <h1 className="text-white px-4">Sign in</h1>
