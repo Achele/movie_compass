@@ -1,4 +1,4 @@
-// import { useState } from "react";
+// import { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 import { Loader } from "./Icon";
 // import styles from "../styles/Hero.module.css";
@@ -10,7 +10,18 @@ const TopRated = () => {
   const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
   const { loading, data, error } = useFetch(url);
   const results = data?.results?.slice(0, 10);
-  console.log(results);
+  // const [heroMovie, setHeroMovie] = useState(null);
+
+  // console.log(results);
+
+  // useEffect(() => {
+  //   if (results && results.length > 0) {
+  //     // Select the first movie as the hero movie
+  //     setHeroMovie(results[0]);
+  //   }
+  // }, [results]);
+
+  // console.log("Hero:", heroMovie);
 
   return (
     <section className="py-4 px-8">
@@ -19,33 +30,11 @@ const TopRated = () => {
       {error && (
         <div className="error">{`There is a problem fetching the movie data - ${error}`}</div>
       )}
-      <section className="grid grid-cols-4 gap-12">
+      <section className="grid md:grid-cols-2 xl:grid-cols-4 gap-12">
         {results &&
           results.map((movies) => {
             return <MovieCard key={movies.id} {...movies} />;
           })}
-        {/* {results &&
-          results.map((movies) => (
-            // console.log("movies:", movies)
-            <div key={movies.id}>
-              <div className="border-2 rounded bg-black">
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${movies.backdrop_path}`}
-                  alt="backdrop images"
-                />
-              </div>
-              <p>{movies.release_date}</p>
-              <h2>{movies.title}</h2>
-              <span>
-                <span>
-                  <IMDb /> {movies.vote_average}
-                </span>
-                <span>
-                  <Tomatoe /> {movies.popularity}
-                </span>
-              </span>
-            </div>
-          ))} */}
       </section>
     </section>
   );
