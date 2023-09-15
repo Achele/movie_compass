@@ -4,15 +4,19 @@ const Footer = () => {
   return (
     <footer className="flex flex-col justify-center text-center py-8">
       <span className="flex items-center gap-4 justify-center">
-        <FacebookIcon />
-        <InstagramIcon />
-        <TwitterIcon />
-        <YoutubeIcon />
+        <FacebookIcon className=" cursor-pointer" />
+        <InstagramIcon className=" cursor-pointer" />
+        <TwitterIcon className=" cursor-pointer" />
+        <YoutubeIcon className=" cursor-pointer" />
       </span>
-      <ul className="flex items-center gap-4 justify-center font-bold py-3">
-        <li>Conditions of Use</li>
-        <li>Privacy & Policy</li>
-        <li>Press Room</li>
+      <ul className="lg:flex items-center gap-4 justify-center font-bold py-3 ">
+        <li className="hover:hover:text-red-700 cursor-pointer">
+          Conditions of Use
+        </li>
+        <li className="hover:hover:text-red-700 cursor-pointer">
+          Privacy & Policy
+        </li>
+        <li className="hover:hover:text-red-700 cursor-pointer">Press Room</li>
       </ul>
       <p> © 2021 MovieCompass by Ojoachele Onuh </p>
     </footer>
