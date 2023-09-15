@@ -21,21 +21,32 @@ const MovieDetails = () => {
   }
 
   const genres = data.genres || [];
+
+  const convertToUTC = (dateString) => {
+    const options = {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
+
   return (
-    <section className="ml-56 px-16 py-6">
+    <section className="sm:ml-20 sm:px-3 md:ml-36 md:px-16 lg:ml-56 lg:px-16 py-6">
       <img
         src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
         alt=""
       />
 
-      <div className="flex items-center justify-between">
-        <div className="flex justify-evenly p-4">
+      <div className=" lg:flex items-center justify-between">
+        <div className="lg:flex justify-evenly p-4">
           <h2 data-testid="movie-title" className="mr-4 font-bold">
             {data.title}
           </h2>
           <ul className="flex  list-disc ">
             <li data-testid="movie-release-date" className="ml-2">
-              {data.release_date}
+              {convertToUTC(data.release_date)}
             </li>
             <li className="ml-6">
               {" "}
@@ -43,7 +54,7 @@ const MovieDetails = () => {
             </li>
           </ul>
           {genres.length > 0 && (
-            <ul className="flex">
+            <ul className="flex sm:pt-4 lg:pt-0">
               {genres.map((genre) => (
                 <li
                   className="py-1 px-2 mx-2 border border-red-600 text-red-600  rounded-full text-xs "
@@ -56,14 +67,8 @@ const MovieDetails = () => {
           )}
         </div>
 
-        {/* <div className="other-details w-full flex-1.2 pt-40 pr-20">
-          <div className="rating-button">
-            <div className="votes flex items-center justify-end mb-34">
-              <div className="star-rating flex items-center justify-center mr-10">
-                {/* <img src={star} alt="rating" /> */}
-        {/* </div> */}
-        <span className="flex py-4">
-          <p className="rating text-lg font-semibold flex flex-row mr-10 text-gray-300">
+        <span className="flex lg:py-4">
+          <p className="rating text-lg font-semibold flex flex-row mr-2 text-gray-300">
             <StarIcon /> {data.vote_average?.toFixed(1)}
           </p>
           <p className="voters text-lg font-semibold flex flex-row text-gray-600">
@@ -83,7 +88,6 @@ const MovieDetails = () => {
       </p>
       <MovieCredits id={id} apiKey={API_KEY} />
     </section>
-    // </section>
   );
 };
 
