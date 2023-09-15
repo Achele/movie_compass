@@ -28,7 +28,7 @@ const MovieCredits = ({ id, apiKey }) => {
   return (
     <div className="p-4">
       {directors.length > 0 && (
-        <div className="flex">
+        <div className="flex pb-3">
           <p>Director:</p>
           <ul className="flex pl-4 gap-10 list-none  text-red-600 font-medium">
             {directors.map((member, index) => (
@@ -44,7 +44,7 @@ const MovieCredits = ({ id, apiKey }) => {
       {writers.length > 0 && (
         <div className="flex">
           <p>Writers:</p>
-          <ul className="flex pl-4 gap-1 list-none text-red-600 font-medium">
+          <ul className="lg:flex pl-4 gap-1 list-none text-red-600 font-medium">
             {writers.map((member, index) => (
               <li key={member.id}>
                 {member.name}
@@ -56,9 +56,9 @@ const MovieCredits = ({ id, apiKey }) => {
       )}
 
       {cast.length > 0 && (
-        <div className="flex">
+        <div className="flex pt-3">
           <p>Stars:</p>
-          <ul className="flex pl-4 gap-3 list-none text-red-600 font-medium">
+          <ul className="lg:flex pl-4 gap-3 list-none text-red-600 font-medium">
             {cast.map((member, index) => (
               <li key={member.id}>
                 {member.name}
