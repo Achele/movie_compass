@@ -11,7 +11,7 @@ import {
 
 const Sidebar = () => {
   return (
-    <section className=" bg-opacity-30 bg-white border border-opacity-30 border-solid border-black rounded-r-3xl h-screen flex flex-col w-48 items-center justify-center gap-3 fixed z-50">
+    <section className=" bg-opacity-30 bg-white border border-opacity-30 border-solid border-black rounded-r-3xl h-screen flex flex-col lg:w-48 items-center justify-center gap-3 fixed z-50">
       <nav className="w-full text-center">
         <span>
           <Link to={"/"} className="flex items-center">
