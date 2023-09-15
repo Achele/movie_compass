@@ -1,9 +1,7 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { Loader, StarIcon } from "../components/Icon";
-// import { useState } from "react";
 import MovieCredits from "../components/MovieCredits";
-// import Sidebar from "../components/Sidebar";
 
 const MovieDetails = () => {
   const API_KEY = "805ad364617cc903792ab354ed226736";
@@ -25,16 +23,6 @@ const MovieDetails = () => {
   const genres = data.genres || [];
   return (
     <section className="ml-56 px-16 py-6">
-      {/* < div className="flex flex-row text-gray-700 w-full">
-        <div>
-          <div></div>
-        </div>
-
-      </div> */}
-      {/* {loading && <Loader />}
-      {error && (
-        <div className="error">{`There is a problem fetching the movie data - ${error}`}</div>
-      )} */}
       <img
         src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
         alt=""
@@ -46,13 +34,12 @@ const MovieDetails = () => {
             {data.title}
           </h2>
           <ul className="flex  list-disc ">
-            {/* <li data-testid="movie-title">{data.title}</li> */}
             <li data-testid="movie-release-date" className="ml-2">
               {data.release_date}
             </li>
-            <li data-testid="movie-runtime" className="ml-6">
+            <li className="ml-6">
               {" "}
-              {data.runtime} <span>minutes</span>
+              <span data-testid="movie-runtime">{data.runtime}</span> minutes
             </li>
           </ul>
           {genres.length > 0 && (
