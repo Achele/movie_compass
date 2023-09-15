@@ -15,6 +15,7 @@ import facebookIcon from "../assets/fa-brands_facebook-square.png";
 import youtubeIcon from "../assets/fa-brands_youtube.png";
 import logo from "../assets/Logo.png";
 import starIcon from "../assets/Star.png";
+import playIcon from "../assets/Play.png";
 
 const TvIcon = (props) => <img src={tvIcon} alt="Tv Icon" {...props} />;
 
@@ -55,6 +56,8 @@ const Logo = (props) => <img src={logo} alt="Tv Icon" {...props} />;
 
 const StarIcon = (props) => <img src={starIcon} alt="Tv Icon" {...props} />;
 
+const PlayIcon = (props) => <img src={playIcon} alt="Tv Icon" {...props} />;
+
 export {
   TvIcon,
   MenuBar,
@@ -73,4 +76,5 @@ export {
   YoutubeIcon,
   Logo,
   StarIcon,
+  PlayIcon,
 };
