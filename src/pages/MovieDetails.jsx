@@ -34,6 +34,7 @@ const MovieDetails = () => {
 
   return (
     <section className="sm:ml-20 sm:px-3 md:ml-36 md:px-16 lg:ml-56 lg:px-16 py-6">
+      {/* {loading ? (<Loader/>): error ? (<p>Unable to find movie</p>) : ()} */}
       <img
         src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
         alt=""
